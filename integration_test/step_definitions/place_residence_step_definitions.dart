@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:profile/features/profile/screens/personal_data_screen/personal_data_screen.dart';
 import 'package:profile/features/profile/screens/place_residence/place_residence_screen.dart';
 import 'package:surf_flutter_test/surf_flutter_test.dart';
 

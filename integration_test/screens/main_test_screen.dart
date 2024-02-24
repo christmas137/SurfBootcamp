@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:profile/assets/strings/main_strings.dart';
 import 'package:profile/features/profile/screens/init_screen/init_screen.dart';
 
 class MainTestScreen {
