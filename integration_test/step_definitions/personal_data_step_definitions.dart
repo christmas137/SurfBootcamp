@@ -87,4 +87,7 @@ final personalDataStepDefinitions = [
     expect(errorTextFinder, findsNWidgets(3), reason: 'Должно быть три сообщения об ошибке для обязательных полей.');
     },
   ),
+
+
+
 ];

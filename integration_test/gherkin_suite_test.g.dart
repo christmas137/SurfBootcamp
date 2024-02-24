@@ -344,6 +344,41 @@ class _CustomGherkinIntegrationTestRunner extends GherkinIntegrationTestRunner {
               );
             },
           ],
+        );
+
+        runScenario(
+          name: 'Проверка корректности текста кнопки на главном экране',
+          description: null,
+          path:
+              'H:\\SurfProject\\qa\\qa-school-autotests-qa-school-e2e-example\\examples\\profile\\.\\integration_test\\features\\profile.feature',
+          tags: <String>[],
+          steps: [
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name:
+                    'Когда Я проверяю корректность текста кнопки на главном экране',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name: 'Тогда Я вижу текст на кнопке "Edit profile"',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+          ],
           onAfter: () async => onAfterRunFeature(
             name: 'Профиль',
             path:

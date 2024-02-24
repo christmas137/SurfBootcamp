@@ -30,4 +30,5 @@ class PersonalDataTestScreen {
       of: find.byType(NextButton),
       matching: find.byType(ElevatedButton));
 
+  final backButtonFinder = find.byType(BackButton);
 }
