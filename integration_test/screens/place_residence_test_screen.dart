@@ -15,13 +15,11 @@ class PlaceResidenceTestScreen{
 final Finder trait = find.byType(PlaceResidenceScreen);
 ///Поле ввода города.
 final Finder placeResidenceField = find.byKey(TestKeys.placeResidenceField);
-
+/// Поиск элемента списка с текстом "Voronezh".
 final Finder suggestionItem = find.widgetWithText(ListTile, 'Voronezh');
 ///Кнопка далее.
 final Finder nextBtn = find.descendant(
     of: find.byType(NextButton),
     matching: find.byType(ElevatedButton));
-
-
 
 }

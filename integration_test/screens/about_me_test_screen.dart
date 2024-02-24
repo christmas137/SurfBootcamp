@@ -13,8 +13,8 @@ import '../test_screen_library.dart';
 class AboutMeTestScreen {
   /// Экран.
   final Finder trait = find.byType(AboutMeScreen);
-
+  /// Поле для заполнения описания информации о себе.
   final Finder wordsAboutYourselfField = find.byKey(TestKeys.wordsAboutYourself);
-
+  /// Кнопка сохранить.
   final Finder saveBtn = find.byKey(TestKeys.saveBtn);
 }

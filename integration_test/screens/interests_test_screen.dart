@@ -9,7 +9,7 @@ class InterestsTestScreen{
   /// Экран.
   final Finder trait = find.byType(InterestsScreen);
 
-
+  /// Функция поиска чекбокса, расположенного рядом с определённым текстом.
   Finder findCheckboxNextToText(String interestText) {
     return find.byWidgetPredicate(
           (widget) => widget is Checkbox && find.ancestor(

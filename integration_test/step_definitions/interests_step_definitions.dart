@@ -2,6 +2,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:profile/features/profile/screens/interests_screen/interests_screen.dart';
 import 'package:surf_flutter_test/surf_flutter_test.dart';
 
 
@@ -29,7 +30,6 @@ final interestsStepDefinitions = [
         (context, tester) async {
       await tester.pumpUntilVisible(interestsTestScreen.trait);
       await tester.implicitTap(interestsTestScreen.nextBtn);
-      await tester.pumpUntilVisible(interestsTestScreen.trait);
     },
   ),
   testerThen<FlutterWidgetTesterWorld> (
@@ -46,5 +46,10 @@ final interestsStepDefinitions = [
       expect(designCheckboxWidget.value, true);
     },
   ),
-
+  testerThen<FlutterWidgetTesterWorld> (
+    RegExp(r'Я попадаю на экран интересов$'),
+    (context, tester) async {
+      expect(find.byType(InterestsScreen), findsOneWidget);
+  },
+  ),
 ];

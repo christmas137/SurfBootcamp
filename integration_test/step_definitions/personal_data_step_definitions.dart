@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:profile/features/profile/screens/personal_data_screen/personal_data_screen.dart';
 import 'package:profile/features/profile/screens/personal_data_screen/widgets/text_form_field_widget.dart';
 import 'package:surf_flutter_test/surf_flutter_test.dart';
 
@@ -87,7 +88,12 @@ final personalDataStepDefinitions = [
     expect(errorTextFinder, findsNWidgets(3), reason: 'Должно быть три сообщения об ошибке для обязательных полей.');
     },
   ),
-
+  testerThen<FlutterWidgetTesterWorld> (
+    RegExp(r'Я попадаю на экран редактирования профиля$'),
+        (context, tester) async {
+      expect(find.byType(PersonalDataScreen), findsOneWidget);
+    },
+  ),
 
 
 ];

@@ -1,5 +1,6 @@
 import 'package:flutter_gherkin/flutter_gherkin.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:profile/features/profile/screens/init_screen/init_screen.dart';
 import 'package:surf_flutter_test/surf_flutter_test.dart';
 
 
@@ -27,6 +28,13 @@ final mainStepDefinitions = [
     RegExp(r'Я вижу текст на кнопке "Edit profile"$'),
         (context, tester) async {
       expect(mainTestScreen.editProfileButton, findsOneWidget);
+    },
+  ),
+
+  testerThen<FlutterWidgetTesterWorld> (
+    RegExp(r'Я попадаю на начальный экран$'),
+        (context, tester) async {
+      expect(find.byType(InitScreen), findsOneWidget);
     },
   ),
 ];

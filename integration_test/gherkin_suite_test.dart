@@ -6,6 +6,7 @@ import 'package:surf_flutter_test/surf_flutter_test.dart';
 import 'package:surf_logger/surf_logger.dart';
 
 import 'step_definitions/about_me_step_definition.dart';
+import 'step_definitions/button_back_step_definitions.dart';
 import 'step_definitions/interests_step_definitions.dart';
 import 'step_definitions/main_step_definitions.dart';
 import 'step_definitions/personal_data_step_definitions.dart';
@@ -41,6 +42,7 @@ void main() {
         ...mainStepDefinitions,
         ...interestsStepDefinitions,
         ...aboutMeStepsDefinitions,
+        ...buttonBackStepDefenitions,
       ],
     ),
     appMainFunction: (world) => app.run(),
