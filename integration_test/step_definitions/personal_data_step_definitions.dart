@@ -44,7 +44,6 @@ final personalDataStepDefinitions = [
         (context, tester) async {
       await tester.pumpUntilVisible(personalDataTestScreen.trait);
       await tester.implicitTap(personalDataTestScreen.nextBtn);
-      await tester.pumpUntilVisible(placeResidenceTestScreen.trait);
       await tester.pumpAndSettle();
     },
   ),
@@ -69,5 +68,23 @@ final personalDataStepDefinitions = [
       expect(date,'1962-06-21');
     },
   ),
+  testerWhen<FlutterWidgetTesterWorld>(
+    RegExp(r'Я оставляю поля пустыми$'),
+        (context, tester) async {
+        await tester.pumpUntilVisible(personalDataTestScreen.trait);
+        await tester.enterText(personalDataTestScreen.surnameField, '');
+        await tester.enterText(personalDataTestScreen.nameField, '');
+        await tester.pumpUntilVisible(personalDataTestScreen.trait);
+    },
+  ),
 
+  testerThen<FlutterWidgetTesterWorld>(
+    RegExp(r'Я вижу предупреждение, что поля пустые$'),
+        (context, tester) async {
+      final errorTextFinder = find.byWidgetPredicate(
+        (widget) => widget is Text && widget.data == 'This field must be filled');
+
+    expect(errorTextFinder, findsNWidgets(3), reason: 'Должно быть три сообщения об ошибке для обязательных полей.');
+    },
+  ),
 ];

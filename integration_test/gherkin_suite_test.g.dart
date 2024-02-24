@@ -286,6 +286,64 @@ class _CustomGherkinIntegrationTestRunner extends GherkinIntegrationTestRunner {
             description: null,
             tags: <String>[],
           ),
+        );
+
+        runScenario(
+          name: 'Проверка валидации полей на экране профиля с данными',
+          description: null,
+          path:
+              'H:\\SurfProject\\qa\\qa-school-autotests-qa-school-e2e-example\\examples\\profile\\.\\integration_test\\features\\profile.feature',
+          tags: <String>[],
+          steps: [
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name: 'Когда Я перехожу к редактированию профиля',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name: 'И Я оставляю поля пустыми',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name: 'И Я перехожу далее на экран места жительства',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+            (
+              TestDependencies dependencies,
+              bool skip,
+            ) async {
+              return await runStep(
+                name: 'Тогда Я вижу предупреждение, что поля пустые',
+                multiLineStrings: <String>[],
+                table: null,
+                dependencies: dependencies,
+                skip: skip,
+              );
+            },
+          ],
           onAfter: () async => onAfterRunFeature(
             name: 'Профиль',
             path:
